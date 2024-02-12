@@ -1,0 +1,43 @@
+.login-body{
+    height: 100vh;
+    background: url('./Lonewolf-Fitness-background.png');
+    background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white; /* Text color*/
+}
+
+.Login-container{
+    color: rgb(255, 255, 255); /* Text color*/
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.loginBtn{
+    width: 100px;
+}
+
+.login-create-acct{
+    cursor: pointer;
+}
+
+.login-create-acct:hover{
+    color:lightgreen;
+}
