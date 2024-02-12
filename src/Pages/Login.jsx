@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import '../Styles/Login.css'
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 
@@ -16,7 +16,22 @@ function Login({user}) {
   }
 
 const handleSignUp = () => {
+  if (!email || !password) return;
   createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredentail) => {
+    const user = userCredentail.user;
+    console.log(user)
+  })
+  .catch((error) =>{
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage)
+  });
+};
+
+const handleSignIn = () =>{
+  if (!email || !password) return;
+  signInWithEmailAndPassword(auth, email, password)
   .then((userCredentail) => {
     const user = userCredentail.user;
     console.log(user)
@@ -52,7 +67,7 @@ if (user) {
             <input type="password" name="Password" placeholder="password" onChange={handlePasswordChange} required></input>
           </label>
           {isSignUpActive && <button className="loginBtn" type="button" onClick={handleSignUp}>Sign Up</button>}
-          {!isSignUpActive && <button className="loginBtn" type="button" >Sign In</button>}
+          {!isSignUpActive && <button className="loginBtn" type="button" onClick={handleSignIn} >Sign In</button>}
         </form>
       </div>
         {isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Login</button>}
