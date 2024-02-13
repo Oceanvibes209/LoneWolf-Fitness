@@ -53,9 +53,13 @@ if (user) {
   return (
     <div className="login-body">
       <h1>Lonewolf Fitness</h1>
-      <div className="Login-container">
 
-        <form>
+      <div className="Login-container">
+        <div className="login-img">
+          <img src="/Lonewolf-Fitness.jpg"></img>
+        </div>
+        <div className="login-form">
+         <form>
           {isSignUpActive && <legend>Sign Up</legend>}
           {!isSignUpActive && <legend>Sign In</legend>}
           
@@ -68,11 +72,15 @@ if (user) {
           </label>
           {isSignUpActive && <button className="loginBtn" type="button" onClick={handleSignUp}>Sign Up</button>}
           {!isSignUpActive && <button className="loginBtn" type="button" onClick={handleSignIn} >Sign In</button>}
+          {isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Login</button>}
+        {!isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Create an account</button>}
         </form>
       </div>
-        {isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Login</button>}
+        {/* {isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Login</button>}
         {!isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Create an account</button>}
-        {/* <Link to={'/Home'}>Login to Home</Link> */}
+         */}
+        </div>
+        
     </div>
   );
 }

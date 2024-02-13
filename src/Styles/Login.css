@@ -1,24 +1,50 @@
 .login-body{
     height: 100vh;
-    background: url('./Lonewolf-Fitness-background.png');
-    background-color: black;
+    background: url('./gym-background.jpg');
+    background-color: rgb(129, 129, 129);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:contain;
+    background-size:cover;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */ /*Adjusts the vertical placement since the flex-direction is column it reversed the elements */
+    align-items: center;/*Adjusts the horizontal placement since the flex-direction is column it reversed the elements */
     flex-direction: column;
-    color: white; /* Text color*/
+    /* padding-bottom: 20px; */
+}
+
+.login-body > h1{
+    color: white;
+    font-size: 70px;
+    font-weight: 300;
+    
 }
 
 .Login-container{
-    color: rgb(255, 255, 255); /* Text color*/
-    height: 50%;
+    color: rgb(0, 0, 0); /* Text color*/
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: black solid; */
+    box-shadow: 0px 0px 20px 4px rgba(0,0,0,1);
+}
+
+.login-img{
+    width: 50%;
+}
+
+.login-img > img{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.login-form{
+    background-color: #04843D;
+    /* border: purple solid; */
+    width: 50%;
+    height: 100%;
 }
 
 form{
@@ -28,16 +54,23 @@ form{
     flex-direction: column;
     gap: 20px;
     text-align: left;
+    /* border: blue solid; */
+    height: 100%;
 }
 
-.loginBtn{
-    width: 100px;
+legend{
+    font-size: 30px;
 }
 
-.login-create-acct{
+.login-form  form  input{
+    border: none;
+    width: 250px;
+}
+
+.login-form  form  button{
+    width: 150px;
+}
+
+.loginBtn:hover, .login-create-acct:hover{
     cursor: pointer;
-}
-
-.login-create-acct:hover{
-    color:lightgreen;
 }
