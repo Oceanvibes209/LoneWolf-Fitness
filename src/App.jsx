@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import './App.css'
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
@@ -34,8 +34,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Login/>}/> {/*Loads a specific page as default */}
-          <Route path='/Login' element={<Login user={user}/>}/>
+          <Route index element={user ? <Navigate to="/Home" /> : <Login />}/> {/*Loads a specific page as default */}
+          <Route path='/Login' element={user ? <Navigate to="/Home" /> : <Login />}/> {/*The default and /Login routes now check if user is truthy (indicating an authenticated user) and redirect to /Home if so. Otherwise, they render the Login component. */}
           <Route path='/Home' element={<ProtectedRoute user={user}><Home/></ProtectedRoute> }/>{/*Private Route */}
         </Routes>
       </BrowserRouter>

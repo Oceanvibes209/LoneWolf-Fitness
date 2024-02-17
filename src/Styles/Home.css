@@ -1,0 +1,68 @@
+.home-background{
+    display: flex;
+    justify-content: center; 
+    /* Adjusts the vertical placement since the flex-direction is column it reversed the elements */
+    align-items: center;/*Adjusts the horizontal placement since the flex-direction is column it reversed the elements */
+    flex-direction: column;
+    background: url('./gym-background.jpg');
+    background-color: rgb(129, 129, 129);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    gap: 20px;
+}
+
+.home-background > h1{
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+    font-weight: 300;   
+}
+
+.workout-tracker {
+    border: black solid 2px;
+    width: 30%;
+    height: 70%;
+    background-color: rgb(202, 202, 202);
+    display: flex;
+    justify-content: center; 
+    padding-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px; /* Add some spacing between rows */
+    padding-bottom: 5px;
+    border-bottom: rgb(112, 112, 112) solid;
+}
+
+.form-row label {
+    min-width: 100px; /* Ensure labels have consistent width */
+    margin-right: 10px; /* Add some spacing between the label and the input */
+}
+
+.signOutBtn{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.workout-data{
+    border: black solid 2px;
+    width: 60%;
+    height: 70%;
+    background-color: rgb(202, 202, 202);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.workout-data ul li{
+list-style: none;
+margin-bottom: 30px;
+}

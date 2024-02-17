@@ -70,11 +70,14 @@ if (user) {
           <label htmlFor="Password">
             <input type="password" name="Password" placeholder="password" onChange={handlePasswordChange} required></input>
           </label>
+
           {isSignUpActive && <button className="loginBtn" type="button" onClick={handleSignUp}>Sign Up</button>}
           {!isSignUpActive && <button className="loginBtn" type="button" onClick={handleSignIn} >Sign In</button>}
+
           {isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Login</button>}
-        {!isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Create an account</button>}
+          {!isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Create an account</button>}
         </form>
+        
       </div>
         {/* {isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Login</button>}
         {!isSignUpActive && <button type="button" className="login-create-acct" onClick={handleMethodChange}>Create an account</button>}
