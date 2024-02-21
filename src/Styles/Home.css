@@ -16,17 +16,19 @@
 .home-background > h1{
     color: rgb(255, 255, 255);
     font-size: 70px;
-    font-weight: 300;   
+    font-weight: 300;
+    text-shadow: black 2px 2px;   
 }
 
 .workout-tracker {
     border: black solid 2px;
-    width: 30%;
+    width: 50%;
     height: 70%;
     background-color: rgb(202, 202, 202);
     display: flex;
     justify-content: center; 
     padding-bottom: 10px;
+    overflow: hidden;
 }
 
 .form-row {
@@ -53,7 +55,7 @@
 
 .workout-data{
     border: black solid 2px;
-    width: 60%;
+    width: 50%;
     height: 70%;
     background-color: rgb(202, 202, 202);
     display: flex;

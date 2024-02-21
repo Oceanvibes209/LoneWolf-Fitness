@@ -1,16 +1,13 @@
-// import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import "../Styles/Home.css";
 
 function Home() {
-  const [workout, setWorkout] = useState("");
+  const [exercise, setExercise] = useState("");
   const [sets, setSets] = useState("");
   const [reps, setReps] = useState("");
-  const [food, setFood] = useState("");
-  const [calories, setCalories] = useState("");
-  const [protein, setProtein] = useState("");
+  const [weight, setWeight] = useState("");
 
   const fetchWorkouts = async () => {
     try {
@@ -41,7 +38,7 @@ function Home() {
     e.preventDefault(); // Prevents the default form submission behaviour
 
     // Data to be sent to the server
-    const workoutData = { workout, sets, reps, food, calories, protein };
+    const workoutData = { exercise, sets, reps, weight };
 
     try {
       const response = await fetch("/fitness_tracker", {
@@ -58,12 +55,10 @@ function Home() {
         // Reset form or provide further user feedback
 
         // Resetting the input fields to their initial state
-        setWorkout("");
+        setExercise("");
         setSets("");
         setReps("");
-        setFood("");
-        setCalories("");
-        setProtein("");
+        setWeight("")
 
         fetchWorkouts(); // Re-fetch workouts after successful addition
         alert("Submitted");
@@ -103,17 +98,17 @@ function Home() {
           <legend>Workout Tracker</legend>
 
           <div className="form-row">
-            <label>Workout:</label>
+            <label>Exercise:</label>
             <input
               type="text"
-              value={workout}
-              onChange={(e) => setWorkout(e.target.value)}
+              value={exercise}
+              onChange={(e) => setExercise(e.target.value)}
               required
             />
           </div>
 
           <div className="form-row">
-            <label>Sets:</label>
+            <label>Set(s):</label>
             <input
               type="number"
               value={sets}
@@ -133,34 +128,15 @@ function Home() {
           </div>
 
           <div className="form-row">
-            <label>Food:</label>
+            <label>Weight (LBS):</label>
             <input
-              type="text"
-              value={food}
-              onChange={(e) => setFood(e.target.value)}
+              type="number"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
               required
             />
           </div>
 
-          <div className="form-row">
-            <label>Calories:</label>
-            <input
-              type="number"
-              value={calories}
-              onChange={(e) => setCalories(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="form-row">
-            <label>Protein:</label>
-            <input
-              type="number"
-              value={protein}
-              onChange={(e) => setProtein(e.target.value)}
-              required
-            />
-          </div>
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -172,10 +148,9 @@ function Home() {
           <ul>
             {workoutData.map((record, index) => (
               <li key={index}>
-                Date: {new Date(record.date).toLocaleDateString()}, Workout: {record.workout}, Sets: {record.sets}, Reps:{" "}
+                Date: {new Date(record.date).toLocaleDateString()}, Exercise: {record.exercise}, Set(s): {record.sets}, Reps:{" "}
                 {/* This code snippet converts the date string into a Date object and then to a locale-specific date string. */}
-                {record.reps}, Food: {record.food}, Calories: {record.calories},
-                Protein: {record.protein}
+                {record.reps}, Weight: {record.weight} LBS
               </li>
             ))}
           </ul>

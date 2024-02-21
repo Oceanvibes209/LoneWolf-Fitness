@@ -1,7 +1,7 @@
 .login-body{
     height: 100vh;
-    background: url('./gym-background.jpg');
-    background-color: rgb(129, 129, 129);
+    /* background: url('./gym-background.jpg'); */
+    background-color: rgb(72, 72, 72);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -17,6 +17,7 @@
     color: white;
     font-size: 70px;
     font-weight: 300;
+    text-shadow: black 2px 2px;   
     
 }
 
