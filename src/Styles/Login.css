@@ -59,9 +59,13 @@ form{
     height: 100%;
 }
 
-legend{
-    font-size: 30px;
+.login-form legend{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-weight: 300;
+    text-shadow: black 2px 2px;
 }
+
 
 .login-form  form  input{
     border: none;

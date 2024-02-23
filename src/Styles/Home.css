@@ -17,7 +17,7 @@
     color: rgb(255, 255, 255);
     font-size: 70px;
     font-weight: 300;
-    text-shadow: black 2px 2px;   
+    text-shadow: black 2px 2px;
 }
 
 .workout-tracker {
@@ -29,6 +29,14 @@
     justify-content: center; 
     padding-bottom: 10px;
     overflow: hidden;
+}
+
+.workout-tracker legend{
+    padding-top: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: 300;
+    /* text-shadow: black 2px 2px; */
 }
 
 .form-row {
@@ -67,4 +75,15 @@
 .workout-data ul li{
 list-style: none;
 margin-bottom: 30px;
+}
+
+.dataDeleteBtn{
+    border: none;
+    border-radius: 20px;
+}
+
+.dataDeleteBtn:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }

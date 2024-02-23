@@ -7,7 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       // Proxying API requests to the backend server
-      '/fitness_tracker': 'http://localhost:3000'
+      '/fitness_tracker': 'http://localhost:3000',
+      '/food_tracker': 'http://localhost:4000'
+
     }
   }
 })
