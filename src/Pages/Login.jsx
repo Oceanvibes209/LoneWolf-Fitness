@@ -97,22 +97,24 @@ function Login({ user }) {
             )}
 
             {isSignUpActive && (
-              <button
-                type="button"
+              <p> Already have an account ?
+              <a
+                // type="button"
                 className="login-create-acct"
                 onClick={handleMethodChange}
               >
                 Login
-              </button>
+              </a></p>
             )}
             {!isSignUpActive && (
-              <button
-                type="button"
+              <p> Dont have an account?
+              <a
+                // type="button"
                 className="login-create-acct"
                 onClick={handleMethodChange}
               >
                 Create an account
-              </button>
+              </a></p>
             )}
           </form>
         </div>

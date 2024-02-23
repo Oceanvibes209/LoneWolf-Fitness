@@ -76,6 +76,13 @@ form{
     width: 150px;
 }
 
+.login-create-acct{
+    padding-left: 20px;
+    color: blue;
+}
+
 .loginBtn:hover, .login-create-acct:hover{
+    color: blueviolet;
     cursor: pointer;
+    text-decoration: underline;
 }

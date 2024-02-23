@@ -114,8 +114,6 @@ function FoodTracker() {
 
   return (
     <div className="foodTrackerBackground">
-      <Link to={"/Home"}>Home</Link>
-
       <div className="food-tracker">
         <form onSubmit={handleFoodSubmit}>
           <legend>Food Log</legend>
@@ -181,7 +179,7 @@ function FoodTracker() {
             {foodLog.map((record) => (
               <li key={record.id}>
                 Date: {new Date(record.date).toLocaleDateString()}{/* This code snippet converts the date string into a Date object and then to a locale-specific date string. */},
-                 Food: {record.food}, Calories: {record.calories}, Protein (grams):{record.protein}, Fat (grams): {record.fat}, Carbs (grams): {record.carbs},  
+                 Food: {record.food}, Calories: {record.calories}, Protein (grams): {record.protein}, Fat (grams): {record.fat}, Carbs (grams): {record.carbs},  
                 <button onClick={() => handleDelete(record.id)} className="dataDeleteBtn">x</button>
               </li>
             ))}
@@ -190,6 +188,7 @@ function FoodTracker() {
           <p>No food records found.</p>
         )}
       </div>
+      <Link to={"/Home"}><button className="fitTrackBtn">Fitness Tracker</button></Link>
     </div>
   );
 }
